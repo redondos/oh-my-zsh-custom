@@ -1,0 +1,2 @@
+eval `gdircolors ~/src/packages/dircolors-solarized/dircolors.ansi-dark`
+

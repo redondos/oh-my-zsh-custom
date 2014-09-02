@@ -1,0 +1,7 @@
+cd ~/src/packages/ansible
+source hacking/env-setup &>/dev/null
+cd - &>/dev/null
+
+export ANSIBLE_HOSTS=~/src/telmate/gitlab/developertools/ansible/hosts
+export ANSIBLE_HOME=~/src/telmate/gitlab/developertools/ansible
+

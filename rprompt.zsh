@@ -1,0 +1,2 @@
+unset RPROMPT
+unset RPROMPT2
