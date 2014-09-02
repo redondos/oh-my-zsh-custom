@@ -1,5 +1,7 @@
 #eval "$(hub alias -s)"
 #compdef hub=git
 
-export GITHUB_USER=redondos
-export GITHUB_PASSWORD=$(keychain_password redondos github.com)
+if [[ -e /usr/bin/security ]]; then
+  export GITHUB_USER=redondos
+  export GITHUB_PASSWORD=$(/usr/bin/security -q find-internet-password -g -w -s github.com -a redondos)
+fi
