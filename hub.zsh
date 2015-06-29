@@ -5,3 +5,5 @@ if [[ -e /usr/bin/security ]]; then
   export GITHUB_USER=redondos
   export GITHUB_PASSWORD=$(/usr/bin/security -q find-internet-password -g -w -s github.com -a redondos)
 fi
+
+alias gsh='git show'
