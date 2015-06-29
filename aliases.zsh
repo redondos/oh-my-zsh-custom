@@ -15,3 +15,4 @@ alias -g Gi='| grep -i'
 alias ack-grep='ack'
 
 alias ssh256='ssh -v -c aes256-ctr'
+alias randomize="perl -MList::Util -e 'print List::Util::shuffle <>'"
