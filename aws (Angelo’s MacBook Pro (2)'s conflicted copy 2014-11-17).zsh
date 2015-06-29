@@ -1,3 +1,4 @@
+# Personal
 aws-set()
 {
   case $1 in
@@ -16,6 +17,9 @@ aws-set()
       export AWS_SECRET_ACCESS_KEY=$(/usr/bin/security -q find-internet-password -g -w -s aws.amazon.com -a AKIAJUGJYXYC445IZX5Q)
       export AWS_DEFAULT_REGION=us-west-1
       ;;
+    help)
+      echo "prod ops personal prod-ro"
+      ;;
     *)
       # prod-ro
       export AWS_ACCESS_KEY_ID=AKIAJCWT6423JIUXXDCQ
@@ -23,13 +27,6 @@ aws-set()
       export AWS_DEFAULT_REGION=us-east-1
       ;;
   esac
-}
-
-aws-show()
-{
-  echo AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
-  echo AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
-  echo AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION
 }
 
 if [[ -e /usr/bin/security ]]; then
