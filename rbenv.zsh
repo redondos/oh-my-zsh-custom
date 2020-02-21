@@ -1,1 +1,1 @@
-PATH=~/.rbenv/shims:$PATH
+PATH=$PATH:~/.rbenv/shims
