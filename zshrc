@@ -1,14 +1,17 @@
 ZSH=$HOME/.oh-my-zsh
 
-kube_cluster() {
-  kubectl config current-context
-}
-kube_context() {
-  ns=$(kubectl config get-contexts | awk '{if ($2 == "'$(kubectl config current-context)'") print $5}')
-  [[ -z $ns ]] && ns=default
-  echo $ns
-}
-  ns=$(kubectl config get-contexts | awk '{if ($2 == "'$(kubectl config current-context)'") print $5}')
+# superseded by starship prompt
+#kube_cluster() {
+#  kubectl config current-context
+#}
+#kube_context() {
+#  ns=$(kubectl config get-contexts | awk '{if ($2 == "'$(kubectl config current-context)'") print $5}')
+#  [[ -z $ns ]] && ns=default
+#  echo $ns
+#
+#
+#  ns=$(kubectl config get-contexts | awk '{if ($2 == "'$(kubectl config current-context)'") print $5}')
+
 if [[ -e $ZSH/oh-my-zsh.sh ]]; then
 
   ZSH_THEME="gallifrey"
@@ -22,7 +25,9 @@ if [[ -e $ZSH/oh-my-zsh.sh ]]; then
   #PROMPT="%{$fg[green]%}%M%{$reset_color%} %2~ %{$reset_color%}%B»%b "
   #RPS1="${return_code}"
   #:RPS1='${return_code} %F{244}($(kubectl config current-context))%{$reset_color%}'
-  RPS1='${return_code} %F{100}(aws:$AWS_ACCOUNT)%{$reset_color%}%F{244}(k8s:$(kube_cluster):$(kube_context))%{$reset_color%}'
+  #
+  # superseded by starship prompt
+  # RPS1='${return_code} %F{100}(aws:$AWS_ACCOUNT)%{$reset_color%}%F{244}(k8s:$(kube_cluster):$(kube_context))%{$reset_color%}'
 else
 
  autoload -U colors && colors
@@ -43,8 +48,6 @@ else
 
 fi
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+export STARSHIP_CONFIG=~/.oh-my-zsh/custom/starship.toml
+eval "$(starship init zsh)"

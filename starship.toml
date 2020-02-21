@@ -1,0 +1,71 @@
+prompt_order = [
+    "directory",
+    "git_branch",
+    "git_commit",
+    "git_state",
+    "git_status",
+    "kubernetes",
+    "env_var",
+    "aws",
+    "username",
+    "hostname",
+    "hg_branch",
+    "package",
+    "dotnet",
+    "elm",
+    "golang",
+    "haskell",
+    "java",
+    "nodejs",
+    "php",
+    "python",
+    "ruby",
+    "rust",
+    "terraform",
+    "nix_shell",
+    "conda",
+    "memory_usage",
+    "crystal",
+    "cmd_duration",
+    "line_break",
+    "jobs",
+    "battery",
+    "time",
+    "character",
+]
+
+
+[env_var]
+variable = "AWS_ACCOUNT"
+style = "bold blue"
+prefix = "aws:"
+symbol = ""
+
+[aws]
+disabled = true
+style = "bold blue"
+#symbol = "🅰 "
+displayed_items = "all"
+[aws.region_aliases]
+ap-southeast-2 = "au"
+us-east-1 = "va"
+
+#[kubernetes]
+#prefix = "foo "
+#disabled = false
+
+[cmd_duration]
+style = "dimmed yellow"
+min_time = 0
+prefix = "in "
+
+[kubernetes]
+symbol = "⛵ "
+style = "cyan"
+disabled = false
+
+[git_status]
+disabled = true
+
+[terraform]
+show_version = false
