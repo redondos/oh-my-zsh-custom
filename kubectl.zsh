@@ -1,3 +1,7 @@
+alias kg='kubectl get'
+alias kd='kubectl describe'
+alias kgn='kubectl get node'
+alias kdn='kubectl describe node'
 alias kgpa='kubectl get pods --all-namespaces'
 alias kgn='kubectl get nodes'
 alias kcgc='kubectl config get-contexts'
